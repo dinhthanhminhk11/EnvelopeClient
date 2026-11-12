@@ -1,0 +1,11 @@
+# struct kinfo_proc of <sys/sysctl.h> / <sys/proc.h> on 64-bit Apple targets and the sysctl constants of the debugger
+# check (src/risk/apple.rs), as tests/c-abi/kinfo_layout.c prints them. Measured with the macOS SDK of the
+# CommandLineTools (MacOSX15.5.sdk, arm64). tools/c-abi-smoke.sh compares this file with the SDK of the host; the
+# unit test kinfo_proc_constants_are_the_measured_ones compares it with the Rust constants.
+sizeof_kinfo_proc=648
+offsetof_p_flag=32
+offsetof_p_pid=40
+P_TRACED=2048
+CTL_KERN=1
+KERN_PROC=14
+KERN_PROC_PID=1

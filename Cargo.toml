@@ -1,6 +1,67 @@
 [package]
-name = "EnvelopeClient"
+name = "doodleart-core"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+rust-version = "1.85"
+description = "DoodleArt client security core (iOS C ABI, Android JNI): envelope v1, integrity hashes, device signals, risk detection"
+publish = false
+build = "build.rs"
+
+[lib]
+name = "doodleart_core"
+# cdylib: libdoodleart_core.so for the Kotlin :security module. rlib: host tests and interop tests.
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# Exactly one build type must be enabled. It selects the embedded server Ed25519 keys
+# (config/server-keys.<type>.conf) and the APK signing-cert allowlist. build-android.sh always passes
+# --no-default-features --features build-<type>; the default only exists so plain `cargo test` works on the host.
+default = ["build-debug"]
+build-debug = []
+build-qa = []
+build-release = []
 
 [dependencies]
+chacha20poly1305 = { version = "0.10.1", default-features = false, features = ["alloc"] }
+ed25519-dalek = { version = "2.2", default-features = false, features = ["std", "zeroize", "fast"] }
+hkdf = "0.12.4"
+libc = "0.2"
+# Inflate of gzip-encoded sealed responses (X-Tx-Encoding: gzip, src/gzip.rs). Pure Rust, no imports.
+miniz_oxide = { version = "0.8", default-features = false, features = ["with-alloc"] }
+obfstr = "0.4.6"
+rand_core = { version = "0.6", features = ["getrandom"] }
+serde_json = "1"
+sha2 = "0.10.8"
+x25519-dalek = { version = "2.0.1", default-features = false, features = ["static_secrets", "zeroize", "precomputed-tables"] }
+zeroize = { version = "1.8", features = ["zeroize_derive"] }
+
+# The JNI glue (src/jni.rs) is never part of an Apple library (build.rs: cfg doodleart_apple_lib, iOS and the macOS slice of
+# build-ios.sh): src/lib.rs compiles it everywhere else, a plain macOS build included (the Kotlin host harness loads
+# its JNI_OnLoad). The macOS slice does not reference the crate, so nothing of it is linked there; iOS unit tests get it
+# from [dev-dependencies] (same version).
+[target.'cfg(any(not(target_vendor = "apple"), target_os = "macos"))'.dependencies]
+jni-sys = "0.3"
+
+# Raw syscalls (inline asm for aarch64 / armv7 thumb / x86_64) so sensitive reads bypass hookable libc wrappers.
+[target.'cfg(any(target_os = "android", target_os = "linux"))'.dependencies]
+syscalls = { version = "0.8", default-features = false }
+
+[dev-dependencies]
+jni-sys = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = "symbols"
+debug = false
+incremental = false
+# panic = "unwind" on purpose (plan §7.3 said "abort"): every JNI entry point runs inside catch_unwind and turns a
+# panic into STATUS_INTERNAL. Under panic = "abort" catch_unwind is a no-op and any panic would kill the app, which
+# contradicts the "client never crashes itself" rule (plan §7.2). The code avoids panicking paths on untrusted input;
+# catch_unwind is the backstop.
+panic = "unwind"
+overflow-checks = false
+
+[profile.dev]
+panic = "unwind"

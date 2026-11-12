@@ -1,0 +1,23 @@
+12c00000-2ac00000 rw-p 00000000 00:00 0                                  [anon:dalvik-main space (region space)]
+70a3c000-70a9e000 r--p 00000000 fd:00 1592                               /system/framework/arm64/boot.oat
+70a9e000-70c41000 r-xp 00062000 fd:00 1592                               /system/framework/arm64/boot.oat
+5c3a8d2000-5c3a8d4000 r--p 00000000 fd:00 412                            /system/bin/app_process64
+7a10000000-7a10400000 r--p 00000000 fe:2c 90211                          /data/app/~~pQ7vR2aLx0eN5sKj9cYt1g==/com.google.android.trichromelibrary_662309833-Hn3cUq8wZr1yTb6dVx0mPA==/base.apk
+7a10400000-7a16a00000 r-xp 00400000 fe:2c 90211                          /data/app/~~pQ7vR2aLx0eN5sKj9cYt1g==/com.google.android.trichromelibrary_662309833-Hn3cUq8wZr1yTb6dVx0mPA==/base.apk
+7a16a00000-7a16e00000 r--p 06a00000 fe:2c 90211                          /data/app/~~pQ7vR2aLx0eN5sKj9cYt1g==/com.google.android.trichromelibrary_662309833-Hn3cUq8wZr1yTb6dVx0mPA==/base.apk
+7a20000000-7a20200000 r--p 00000000 fe:2c 90187                          /data/app/~~Lw4bT9eQm2rY8uZx5aKs0w==/com.google.android.webview-Bf6nVq1jXo3pRt7yLc2eSg==/base.apk
+7a30000000-7a30800000 r--p 00000000 fe:2c 88412                          /data/app/~~Zr0cE5tWq9yU2iOp7aSd3f==/com.google.android.gms-Kj8hGf4dSa1zXc6vBn5mQw==/base.apk
+7a30800000-7a31000000 r--p 00000000 fe:2c 88415                          /data/app/~~Zr0cE5tWq9yU2iOp7aSd3f==/com.google.android.gms-Kj8hGf4dSa1zXc6vBn5mQw==/oat/arm64/base.odex
+7b11e00000-7b12000000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7b2a600000-7b2a800000 r-xs 00200000 00:05 37591                          /memfd:jit-cache (deleted)
+7b40000000-7b40100000 r--p 00000000 fe:2c 81922                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/base.apk
+7b40100000-7b40300000 r--p 00000000 fe:2c 81922                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/oat/arm64/base.odex
+7b41000000-7b41040000 r--p 00000000 fe:2c 81931                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/split_config.arm64_v8a.apk
+7b41040000-7b410f8000 r--p 00004000 fe:2c 81931                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/split_config.arm64_v8a.apk
+7b410f8000-7b41200000 r-xp 000bc000 fe:2c 81931                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/split_config.arm64_v8a.apk
+7b41200000-7b41214000 rw-p 001c4000 fe:2c 81931                          /data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/split_config.arm64_v8a.apk
+7b5c400000-7b5c47c000 r--p 00000000 07:38 54                             /apex/com.android.runtime/lib64/bionic/libc.so
+7b5c47c000-7b5c51e000 r-xp 0007c000 07:38 54                             /apex/com.android.runtime/lib64/bionic/libc.so
+7b70000000-7b70040000 r--p 00000000 fd:00 3020                           /system/lib64/libwebviewchromium_loader.so
+7bd0f5d000-7bd0f5e000 r-xp 00000000 00:00 0                              [vdso]
+7fe8a3c000-7fe8a5d000 rw-p 00000000 00:00 0                              [stack]

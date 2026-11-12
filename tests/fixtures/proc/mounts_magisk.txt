@@ -1,0 +1,5 @@
+/dev/block/dm-6 / ext4 ro,seclabel,relatime 0 0
+tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0
+magisk /debug_ramdisk tmpfs rw,seclabel,relatime,mode=755 0 0
+/dev/block/dm-45 /system/bin/lspd ext4 ro,seclabel,relatime 0 0
+/data/adb/modules/zygisk_lsposed/system/framework /system/framework/lspd none bind 0 0

@@ -1,0 +1,14 @@
+/dev/null
+/dev/null
+/dev/null
+socket:[812734]
+/apex/com.android.art/javalib/core-oj.jar
+/system/framework/framework.jar
+/data/app/~~Xq3kQ9cPZbVQnT0yUj2w3A==/com.cem.theme.icon.widget-Lr8m1sV2cQhPq0ZbX7dJ_A==/base.apk
+anon_inode:[eventfd]
+anon_inode:[eventpoll]
+pipe:[812790]
+/dev/binderfs/binder
+/dev/ashmem13c1ed4c-f1c3-4b2a-a5f1-1b41e2f9b0a1
+/memfd:jit-cache (deleted)
+/data/data/com.cem.theme.icon.widget/databases/doodleart.db
