@@ -1,0 +1,11 @@
+/dev/block/dm-6 / ext4 ro,seclabel,relatime 0 0
+tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0
+devpts /dev/pts devpts rw,seclabel,relatime,mode=600,ptmxmode=000 0 0
+proc /proc proc rw,relatime,gid=3009,hidepid=invisible 0 0
+sysfs /sys sysfs rw,seclabel,relatime 0 0
+/dev/block/dm-7 /system_ext ext4 ro,seclabel,relatime 0 0
+/dev/block/dm-8 /product ext4 ro,seclabel,relatime 0 0
+/dev/block/dm-9 /vendor ext4 ro,seclabel,relatime 0 0
+/dev/block/loop12 /apex/com.android.art@340090000 ext4 ro,dirsync,seclabel,nodev,noatime 0 0
+/dev/block/dm-45 /data f2fs rw,lazytime,seclabel,nosuid,nodev,noatime 0 0
+/dev/fuse /storage/emulated fuse rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other 0 0

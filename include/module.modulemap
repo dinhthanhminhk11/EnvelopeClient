@@ -1,0 +1,7 @@
+// Clang module of the C ABI (include/doodleart_core.h): Swift imports it as `import DoodleArtCore`, the name of the
+// xcframework that ships the static library with these two files as its headers. No `link` directive: the static
+// library inside the xcframework is linked by the binary target itself.
+module DoodleArtCore {
+    header "doodleart_core.h"
+    export *
+}

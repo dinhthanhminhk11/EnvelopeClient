@@ -1,0 +1,10 @@
+Name:	heme.icon.widget
+Umask:	0077
+State:	S (sleeping)
+Tgid:	21544
+Ngid:	0
+Pid:	21544
+PPid:	791
+TracerPid:	14221
+Uid:	10321	10321	10321	10321
+Gid:	10321	10321	10321	10321

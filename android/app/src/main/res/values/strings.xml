@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Envelope Sample</string>
+    <string name="run_local">Run local checks</string>
+    <string name="send_request">Send sealed request</string>
+    <string name="server_url_hint">Server base URL</string>
+    <string name="path_hint">Request path, e.g. api/v2/me</string>
+    <string name="server_note">Needs a server that speaks envelope v1 and whose key is embedded in this build of the core.</string>
+</resources>
